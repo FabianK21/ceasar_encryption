@@ -3,7 +3,7 @@
 # To decrypt the message you need to use the same key as it was encrypted
 
 # Initialise
-alphabet = 'abcdefghijklmnopqrstuvwxyz'
+alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 newMessage = ''
 newCharacter = ''
 
@@ -26,7 +26,7 @@ if myOption == 1:
     for character in myMessage:
         if character in alphabet:                                           # Check if in alphabet
             position = alphabet.find(character)                             # Locate position
-            newPosition = (position + myKey) % 26                           # Get new postition an check overflow
+            newPosition = (position + myKey) % 52                           # Get new postition an check overflow
             newCharacter = alphabet[newPosition]                            # Get new character
             newMessage += newCharacter                                      # Allign all characters in to one message
 
@@ -50,7 +50,7 @@ elif myOption == 2:
     for character in myMessage:
         if character in alphabet:
             position = alphabet.find(character)                             # Locate position
-            newPosition = (position - myKey) % 26                           # Get new postition an check overflow
+            newPosition = (position - myKey) % 52                           # Get new postition an check overflow
             newCharacter = alphabet[newPosition]                            # Get new character
             newMessage += newCharacter                                      # Allign all characters in to one message
 
